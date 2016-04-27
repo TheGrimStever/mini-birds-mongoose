@@ -8,7 +8,7 @@ var Sighting = require('./Sighting');
 var app = express();
 app.use(bodyParser.json());
 mongoose.set('debug', true);
-mongoose.connect('mongodb://localhost/birds-mongoose');
+mongoose.connect('mongodb://localhost/birds-mongoose-2');
 
 
 var port = 3000;

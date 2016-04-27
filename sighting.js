@@ -1,18 +1,11 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
+var birdSchema = require('./Bird');
+var userSchema = require('.User');
 
 var sightingSchema = new Schema({
-  name: {type: String, lowercase: true},
-  order: {type: String, maxlength: 20},
-  status: {
-    type: String,
-    lowercase: true,
-    enum: [
-      'extinct',
-      'near threatened',
-      'least concern'
-    ]
-  },
+  user: {type: String, ref: "User"},
+  birds: [birdSchema],
   confirmed: {type: Boolean, default: false},
   numberSeen: {type: Number, min: 1}
 });
